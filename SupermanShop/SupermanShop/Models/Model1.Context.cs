@@ -13,10 +13,10 @@ namespace SupermanShop.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBuserSignupLoginEntities : DbContext
+    public partial class SupermanShoppingEntities : DbContext
     {
-        public DBuserSignupLoginEntities()
-            : base("name=DBuserSignupLoginEntities")
+        public SupermanShoppingEntities()
+            : base("name=SupermanShoppingEntities")
         {
         }
     

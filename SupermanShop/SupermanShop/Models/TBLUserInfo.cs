@@ -11,28 +11,12 @@ namespace SupermanShop.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class TBLUserInfo
     {
         public int IdUs { get; set; }
-
-        [Required(ErrorMessage ="This field is required")]
-        [Display(Name = "Username")]
         public string UsernameUs { get; set; }
-        [Required(ErrorMessage = "This field is required")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
         public string PasswordUs { get; set; }
-
-
-        [Required(ErrorMessage = "This field is required")]
-        [DataType(DataType.Password)]
-        [NotMapped]
-        [Display(Name = "RePassword")]
-        [Compare("PasswordUs",ErrorMessage ="Confirm Password doesn't match! try again")]
-
         public string RePasswordUs { get; set; }
     }
 }

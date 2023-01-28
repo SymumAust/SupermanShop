@@ -6,12 +6,13 @@ using System.Web;
 using System.Web.Mvc;
 
 
+
 namespace SupermanShop.Controllers
 {
     public class HomeController : Controller
     {
 
-        DBuserSignupLoginEntities db = new DBuserSignupLoginEntities();
+        SupermanShoppingEntities db = new SupermanShoppingEntities();
 
         // GET: Home
         public ActionResult Index()

@@ -4,32 +4,33 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBuserSignupLoginModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SupermanShoppingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TBLUserInfo">
           <Key>
             <PropertyRef Name="IdUs" />
           </Key>
           <Property Name="IdUs" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UsernameUs" Type="varchar" MaxLength="20" />
-          <Property Name="PasswordUs" Type="varchar" MaxLength="255" />
+          <Property Name="UsernameUs" Type="varchar" MaxLength="200" />
+          <Property Name="PasswordUs" Type="varchar" MaxLength="200" />
+          <Property Name="RePasswordUs" Type="varchar" MaxLength="200" />
         </EntityType>
-        <EntityContainer Name="DBuserSignupLoginModelStoreContainer">
+        <EntityContainer Name="SupermanShoppingModelStoreContainer">
           <EntitySet Name="TBLUserInfo" EntityType="Self.TBLUserInfo" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DBuserSignupLoginModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SupermanShoppingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="TBLUserInfo">
           <Key>
             <PropertyRef Name="IdUs" />
           </Key>
           <Property Name="IdUs" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UsernameUs" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="PasswordUs" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UsernameUs" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordUs" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RePasswordUs" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="DBuserSignupLoginEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SupermanShoppingEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TBLUserInfoes" EntityType="Self.TBLUserInfo" />
         </EntityContainer>
       </Schema>
@@ -37,10 +38,11 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DBuserSignupLoginModelStoreContainer" CdmEntityContainer="DBuserSignupLoginEntities">
+        <EntityContainerMapping StorageEntityContainer="SupermanShoppingModelStoreContainer" CdmEntityContainer="SupermanShoppingEntities">
           <EntitySetMapping Name="TBLUserInfoes">
-            <EntityTypeMapping TypeName="DBuserSignupLoginModel.TBLUserInfo">
+            <EntityTypeMapping TypeName="SupermanShoppingModel.TBLUserInfo">
               <MappingFragment StoreEntitySet="TBLUserInfo">
+                <ScalarProperty Name="RePasswordUs" ColumnName="RePasswordUs" />
                 <ScalarProperty Name="IdUs" ColumnName="IdUs" />
                 <ScalarProperty Name="UsernameUs" ColumnName="UsernameUs" />
                 <ScalarProperty Name="PasswordUs" ColumnName="PasswordUs" />
